@@ -1,4 +1,75 @@
- return (
+import { useQuery } from "@tanstack/react-query";
+import { FC, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Link } from "react-router-dom";
+import SearchBox from "../components/Common/SearchBox";
+import Sidebar from "../components/Common/Sidebar";
+import Title from "../components/Common/Title";
+import Footer from "../components/Footer/Footer";
+import MainHomeFilms from "../components/Home/MainHomeFilm";
+import RecommendGenres from "../components/Home/RecommendGenres";
+import TrendingNow from "../components/Home/TrendingNow";
+import {
+  getHomeMovies,
+  getHomeTVs,
+  getMovieBannerInfo,
+  getTVBannerInfo,
+} from "../services/home";
+import { HomeFilms, Item } from "../shared/types";
+import { useAppSelector } from "../store/hooks";
+const Home: FC = () => {
+  const currentUser = useAppSelector((state) => state.auth.user);
+  const [currentTab, setCurrentTab] = useState(
+    localStorage.getItem("currentTab") || "tv"
+  );
+  const [isSidebarActive, setIsSidebarActive] = useState(false);
+
+  const {
+    data: dataMovie,
+    isLoading: isLoadingMovie,
+    isError: isErrorMovie,
+    error: errorMovie,
+  } = useQuery<HomeFilms, Error>(["home-movies"], getHomeMovies);
+
+  const {
+    data: dataMovieDetail,
+    isLoading: isLoadingMovieDetail,
+    isError: isErrorMovieDetail,
+    error: errorMovieDetail,
+  } = useQuery<any, Error>(
+    ["detailMovies", dataMovie?.Trending],
+    () => getMovieBannerInfo(dataMovie?.Trending as Item[]),
+    { enabled: !!dataMovie?.Trending }
+  );
+
+  const {
+    data: dataTV,
+    isLoading: isLoadingTV,
+    isError: isErrorTV,
+    error: errorTV,
+  } = useQuery<HomeFilms, Error>(["home-tvs"], getHomeTVs);
+
+  const {
+    data: dataTVDetail,
+    isLoading: isLoadingTVDetail,
+    isError: isErrorTVDetail,
+    error: errorTVDetail,
+  } = useQuery<any, Error>(
+    ["detailTvs", dataTV?.Trending],
+    () => getTVBannerInfo(dataTV?.Trending as Item[]),
+    { enabled: !!dataTV?.Trending }
+  );
+
+  if (isErrorMovie) return <p>ERROR: {errorMovie.message}</p>;
+
+  if (isErrorMovieDetail) return <p>ERROR: {errorMovieDetail.message}</p>;
+
+  if (isErrorTV) return <p>ERROR: {errorTV.message}</p>;
+
+  if (isErrorTVDetail) return <p>ERROR: {errorTVDetail.message}</p>;
+
+  return (
     <>
       <Title value="Night Owl | Free Movie Website" />
 

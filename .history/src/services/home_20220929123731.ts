@@ -106,7 +106,7 @@ export const getTVBannerInfo = async (tvs: Item[]): Promise<any> => {
   const translations = translationRes.map((item: any) =>
     item.data.translations
       .filter((translation: any) =>
-        ["vi","kr", "eng"].includes(translation.iso_639_1)
+        ["vi", "fr", "ja", "pt", "ru", "es"].includes(translation.iso_639_1)
       )
       .reduce((acc: any, element: any) => {
         if (element.iso_639_1 === "vi") {
