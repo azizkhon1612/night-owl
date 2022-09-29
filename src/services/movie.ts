@@ -17,6 +17,7 @@ export const getMovieFullDetail = async (id: number): Promise<FilmInfo> => {
         axios.get(`/movie/${id}/similar`),
         axios.get(`/movie/${id}/videos`),
     ]);
+    // form axios i have called the get request to call the all movie types
 
     const movieInfo = response.reduce((final, current, index) => {
         switch (index) {
