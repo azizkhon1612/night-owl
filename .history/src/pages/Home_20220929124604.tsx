@@ -33,7 +33,7 @@
                 }}
                 className={`${
                   currentTab === "tv" &&
-                  "text-white font-medium after:absolute"
+                  "text-white font-medium after:absolute after:bottom-0 after:left-[13%] after:bg-white after:h-[3px] after:w-5"
                 } transition duration-300 hover:text-white`}
               >
                 TV Show
