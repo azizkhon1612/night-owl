@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // import { FC } from "react";
 // import { Item } from "../../shared/types";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -110,3 +111,5 @@
 
 // export default BannerSlider;
 export{}
+=======
+>>>>>>> Stashed changes

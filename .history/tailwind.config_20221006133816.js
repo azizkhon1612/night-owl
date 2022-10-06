@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "black-lighten": "#161616",
+        "black-lighten": "#343a40",
         primary: "#5179ff",
         primary: "#bd0000",
         primary: "#186db6",
@@ -12,7 +12,7 @@ module.exports = {
         "gray-darken": "#3a3939",
         dark: "#1C1C1E",
         "dark-darken": "#19191b",
-        "dark-lighten": "#343a40",
+        "dark-lighten": "#333335",
         "dark-lighten-2": "#49494b",
       },
       fontFamily: {
