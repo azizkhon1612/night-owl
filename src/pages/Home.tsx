@@ -1,21 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import React from "react";
-import { FC, useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FC } from "react";
+
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 import Title from "../components/Common/Title";
 import Footer from "../components/Footer/Footer";
 
-import {
-  getHomeMovies,
-  getHomeTVs,
-  getMovieBannerInfo,
-  getTVBannerInfo,
-} from "../services/home";
-import { HomeFilms, Item } from "../shared/types";
-import { useAppSelector } from "../store/hooks";
+
 const Home: FC = () => {
   return (
     <>
