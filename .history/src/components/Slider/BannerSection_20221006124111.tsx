@@ -111,4 +111,3 @@ const BannerSlider: FC<BannerSliderProps> = ({
 };
 
 export default BannerSlider;
-
