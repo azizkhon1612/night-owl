@@ -109,4 +109,4 @@
 // };
 
 // export default BannerSlider;
-
+export{}
