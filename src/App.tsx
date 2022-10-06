@@ -11,7 +11,7 @@ function App() {
   return (
     <Routes>
       <Route index element={<Home />} />
-      <Route path="*" element={<Error />} />
+   
     </Routes>
   );
 }
