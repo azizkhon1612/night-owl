@@ -20,7 +20,7 @@ const Home: FC = () => {
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Night<span className="text-primary">OWl</span>
+            Night<span className="text-primary">light</span>
           </p>
         </Link>
 
