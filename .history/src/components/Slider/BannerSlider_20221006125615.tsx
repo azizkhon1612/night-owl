@@ -1,6 +1,4 @@
 import { FC } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
 import { Item } from "../../shared/types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resizeImage } from "../../shared/utils";
@@ -8,7 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { BsFillPlayFill } from "react-icons/bs";
 import Skeleton from "../Common/Skeleton";
-import { useCurrentViewportView } from "../../hooks/useCurrentViewportView";
+
 interface BannerSliderProps {
   films: Item[] | undefined;
   dataDetail: {
@@ -111,3 +109,4 @@ const BannerSlider: FC<BannerSliderProps> = ({
 };
 
 export default BannerSlider;
+

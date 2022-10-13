@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+
+impo
 import { Item } from "../../shared/types";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { resizeImage } from "../../shared/utils";

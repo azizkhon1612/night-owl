@@ -1,6 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-//hello it is hue
-//It is my change
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -8,13 +6,13 @@ module.exports = {
       colors: {
         "black-lighten": "#161616",
         primary: "#5179ff",
-        // primary: "#bd0000",
-        // primary: "#186db6",
+        primary: "#bd0000",
+        primary: "#186db6",
         "gray-lighten": "#989898",
         "gray-darken": "#3a3939",
         dark: "#1C1C1E",
         "dark-darken": "#19191b",
-        "dark-lighten": "#343a40",
+        "dark-lighten": "#333335",
         "dark-lighten-2": "#49494b",
       },
       fontFamily: {
