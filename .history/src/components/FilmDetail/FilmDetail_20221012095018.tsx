@@ -1,4 +1,4 @@
-//sasa
+
 import { FC, useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import { AiFillHeart } from "react-icons/ai";

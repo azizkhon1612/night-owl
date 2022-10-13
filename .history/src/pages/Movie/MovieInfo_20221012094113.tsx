@@ -1,4 +1,3 @@
-//ss
 import { useQuery } from "@tanstack/react-query";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
