@@ -4,7 +4,7 @@ import { Cast, DetailMovie, DetailTV, Reviews } from "../../shared/types";
 import { resizeImage } from "../../shared/utils";
 import Skeleton from "../Common/Skeleton";
 import ReadMore from "../Common/ReadMore";
-
+import ReviewTab from "./ReviewTab";
 interface FilmTabInfoProps {
   detail?: DetailMovie | DetailTV | undefined;
   credits?: Cast[] | undefined;
@@ -135,7 +135,7 @@ const FilmTabInfo: FC<FilmTabInfoProps> = ({ detail, credits, reviews }) => {
               ))}
           </ul>
         )}
-        
+         {currentTab === "reviews" && reviews && <ReviewTab reviews={reviews} />}
         {currentTab === "seasons" && (
           <>
             <div className="flex justify-between mb-8">
