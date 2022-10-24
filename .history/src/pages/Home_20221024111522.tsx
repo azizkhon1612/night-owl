@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Sidebar from "../components/Common/Sidebar";
 import Title from "../components/Common/Title";
 import Footer from "../components/Footer/Footer";
-import SearchBox from "../components/Common/SearchBox";
 import MainHomeFilms from "../components/Home/MainHomeFilm";
 import TrendingNow from "../components/Home/TrendingNow";
 import {
@@ -157,7 +156,6 @@ const Home: FC = () => {
         </div>
 
         <div className="shrink-0 max-w-[310px] w-full hidden lg:block px-6 top-0 sticky ">
-        <SearchBox />
           <TrendingNow />
         </div>
       </div>
