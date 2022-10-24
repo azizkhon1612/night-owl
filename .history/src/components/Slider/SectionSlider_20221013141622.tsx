@@ -19,6 +19,7 @@ const SectionSlider: FC<SectionSliderProps> = ({ films }) => {
         slidesPerGroupAuto
         spaceBetween={30}
         loop
+        // I substracted 17px because the default scrollbar's width is 17px, which I may change later (to 10px now)
         className="md:!w-[calc(100vw_-_260px_-_310px_-_2px_-_4vw_-_10px)] !w-[calc(100vw-8vw-2px)] tw-section-slider !py-2"
       >
         {films?.map((film) => (
@@ -35,7 +36,7 @@ const SectionSlider: FC<SectionSliderProps> = ({ films }) => {
                 </SwiperSlide>
               ))}
           </>
-        )}S
+        )}
 
         {films !== undefined && (
           <>

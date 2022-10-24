@@ -121,7 +121,6 @@ const Home: FC = () => {
               </button>
             </div>
             <div className="flex gap-6 items-center">
-             
               <p>{currentUser?.displayName || "Anonymous"}</p>
               <LazyLoadImage
                 src={
