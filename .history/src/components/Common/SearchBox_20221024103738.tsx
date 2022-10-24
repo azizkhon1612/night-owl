@@ -1,6 +1,7 @@
 import { FC, FormEvent, useEffect, useRef, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { getSearchKeyword } from "../../services/search";
 
 interface SearchBoxProps {
   autoFocus?: boolean;
@@ -28,7 +29,9 @@ const SearchBox: FC<SearchBoxProps> = ({ autoFocus = false }) => {
     if (!searchInput.trim()) return;
 
     timeoutRef.current = setTimeout(async () => {
-      
+      const keywords = await getSearchKeyword(searchInput.trim());
+      setSuggestions(keywords);
+
       if (isInitial) {
         // When user search for "doctor strange", the search params change to "query=doctor+strange". If user now reload the page, the searchBox still hold value "doctor strange". That's good. But I don't like the fact that the suggestion also showing up on first mount/page-reload, so I put this check here to stop it
         isInitial = false;
