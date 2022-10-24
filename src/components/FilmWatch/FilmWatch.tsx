@@ -1,4 +1,3 @@
-import { arrayUnion, doc, getDoc, updateDoc } from "firebase/firestore";
 import { FunctionComponent, useEffect, useState } from "react";
 import { AiFillStar, AiTwotoneCalendar } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -55,7 +54,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             (detail as DetailMovie).title || (detail as DetailTV).name
           } ${
             media_type === "tv" ? `- Season ${seasonId} - Ep ${episodeId}` : ""
-          } | Moonlight`}
+          } | NightOwl`}
         />
       )}
 
@@ -66,7 +65,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Moon<span className="text-primary">light</span>
+            Night<span className="text-primary">Owl</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>
@@ -207,10 +206,9 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
               </ReadMore>
             )}
           </div>
-          <Comment media_type={media_type} id={detail?.id} />
         </div>
         <div className="shrink-0 md:max-w-[400px] w-full relative px-6">
-          {!isMobile && <SearchBox />}
+          {!isMobile}
           {media_type === "movie" && (
             <RightbarFilms
               name="Recommendations"
