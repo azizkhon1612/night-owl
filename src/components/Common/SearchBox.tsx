@@ -23,18 +23,16 @@ const SearchBox: FC=() => {
           />
       </form>
 
-              <ul className="hidden group-focus-within:flex flex-col gap-3 py-3 relative after:absolute after:top-0 after:h-[2px]  after:bg-gray-darken after:left-[5%] after:right-[5%]">
+          <ul className="hidden group-focus-within:flex flex-col gap-3 py-3 relative after:absolute after:top-0 after:h-[2px]  after:bg-gray-darken after:left-[5%] after:right-[5%]">
             <li
-
-              className="focus:bg-red-500 outline-none"
+            
+            className="focus:bg-red-500 outline-none"
  
             >
               <button
-                
                 className="flex items-center gap-3 ml-5 hover:text-white transition duration-300"
               >
                 <BiSearch size={25} />
-                
               </button>
             </li>
           
