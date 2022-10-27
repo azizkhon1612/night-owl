@@ -13,7 +13,7 @@ import {
   Item,
 } from "../../shared/types";
 import { embedMovie, embedTV } from "../../shared/utils";
-import { useAppSelector } from "../../store/hooks";
+
 import ReadMore from "../Common/ReadMore";
 import RightbarFilms from "../Common/RightbarFilms";
 import Sidebar from "../Common/Sidebar";
