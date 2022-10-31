@@ -158,7 +158,7 @@ const Home: FC = () => {
 
         <div className="shrink-0 max-w-[310px] w-full hidden lg:block px-6 top-0 sticky ">
         <SearchBox />
-          <TrendingNow />
+        <TrendingNow />
         </div>
       </div>
 
