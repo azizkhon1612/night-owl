@@ -4,15 +4,15 @@ import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useSearchParams } from "react-router-dom";
-import SearchBox from "../components/Common/SearchBox";
-import Sidebar from "../components/Common/Sidebar";
-import Title from "../components/Common/Title";
-import Footer from "../components/Footer/Footer";
-import SearchResult from "../components/Search/SearchResult";
-import { useCurrentViewportView } from "../hooks/useCurrentViewportView";
+// import SearchBox from "../components/Common/SearchBox";
+// import Sidebar from "../components/Common/Sidebar";
+// import Title from "../components/Common/Title";
+// import Footer from "../components/Footer/Footer";
+// import SearchResult from "../components/Search/SearchResult";
+// import { useCurrentViewportView } from "../hooks/useCurrentViewportView";
 
 interface SearchProps {}
-
+// https://raw.githubusercontent.com/fuocy/video/master/Studio%20Project%20%E2%80%94%20Kapwing.mp4
 const Search: FunctionComponent<SearchProps> = () => {
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const { isMobile } = useCurrentViewportView();
@@ -24,8 +24,8 @@ const Search: FunctionComponent<SearchProps> = () => {
   const [currentTab, setCurrentTab] = useState("multi");
   return (
     <>
-      {!query && <Title value="Search | NightOwl" />}
-      {query && <Title value={`Search: ${query} | NightOwl`} />}
+      {!query && <Title value="Search | Moonlight" />}
+      {query && <Title value={`Search: ${query} | Moonlight`} />}
 
       <div className="flex md:hidden justify-between items-center px-5 my-5">
         <Link to="/" className="flex gap-2 items-center">
@@ -34,7 +34,7 @@ const Search: FunctionComponent<SearchProps> = () => {
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Night<span className="text-primary">Owl</span>
+            Moon<span className="text-primary">light</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>
