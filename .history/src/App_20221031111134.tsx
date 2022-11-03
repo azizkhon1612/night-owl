@@ -9,6 +9,8 @@ import TVWatch from "./pages/TV/TVWatch";
 import MovieWatch from "./pages/Movie/MovieWatch";
 import Explore from "./pages/Explore";
 
+
+
 function App() {
   const location = useLocation();
   // const currentUser = useAppSelector((state) => state.auth.user);
@@ -27,7 +29,7 @@ function App() {
       <Route path="tv/:id/watch" element={<TVWatch />} />
       <Route path="explore" element={<Explore />} />
       <Route path="search" element={<Search />} />
-      <Route path="*" element={<Error />} />
+       <Route path="*" element={<Error />} />
     </Routes>
   );
 }

@@ -204,7 +204,7 @@ const Search: FunctionComponent<SearchProps> = () => {
                       currentTab === "person" && "bg-dark-lighten-2"
                     }`}
                   >
-                    <span>Character</span>
+                    <span>People</span>
                   </button>
                 </div>
               )}

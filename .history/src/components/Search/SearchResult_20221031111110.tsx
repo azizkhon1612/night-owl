@@ -6,7 +6,7 @@ import { getSearchResult } from "../../services/search";
 import { ItemsPage } from "../../shared/types";
 import FilmItem from "../Common/FilmItem";
 import Skeleton from "../Common/Skeleton";
-
+import Pagination from "./Pagination";
 
 interface SearchResultProps {
   currentTab: string;
@@ -64,7 +64,13 @@ const SearchResult: FunctionComponent<SearchResultProps> = ({
             </li>
           ))}
       </ul>
-    
+      {data && (
+        <Pagination
+          maxPage={data.total_pages}
+          currentPage={data.page}
+          onChangePage={changePageHandler}
+        />
+      )}
     </div>
   );
 };

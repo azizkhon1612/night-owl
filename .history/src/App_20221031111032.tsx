@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Search from "./pages/Search";
+
+
 import Error from "./pages/Error";
 import Home from "./pages/Home";
 import MovieInfo from "./pages/Movie/MovieInfo";
@@ -8,6 +9,8 @@ import TVInfo from "./pages/TV/TVInfo";
 import TVWatch from "./pages/TV/TVWatch";
 import MovieWatch from "./pages/Movie/MovieWatch";
 import Explore from "./pages/Explore";
+
+
 
 function App() {
   const location = useLocation();
@@ -27,7 +30,7 @@ function App() {
       <Route path="tv/:id/watch" element={<TVWatch />} />
       <Route path="explore" element={<Explore />} />
       <Route path="search" element={<Search />} />
-      <Route path="*" element={<Error />} />
+       <Route path="*" element={<Error />} />
     </Routes>
   );
 }
