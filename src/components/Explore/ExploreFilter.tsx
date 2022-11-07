@@ -1,5 +1,7 @@
 import { FunctionComponent } from "react";
 import SortBy from "./SortBy";
+import FilterBy from "./FilterBy";
+
 interface ExploreFilterProps {
   currentTab: string;
 }
@@ -10,6 +12,7 @@ const ExploreFilter: FunctionComponent<ExploreFilterProps> = ({
   return (
     <>
       <SortBy />
+      <FilterBy currentTab={currentTab} />
     </>
   );
 };
