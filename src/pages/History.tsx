@@ -1,7 +1,6 @@
 import { doc, onSnapshot } from "firebase/firestore";
 import { FunctionComponent, useEffect, useState } from "react";
 import Title from "../components/Common/Title";
-import FilmListViewForBookmarkAndHistory from "../components/FilmListViewForBookmarkAndHistory/FilmListViewForBookmarkAndHistory";
 import Footer from "../components/Footer/Footer";
 import { db } from "../shared/firebase";
 import { Item } from "../shared/types";
@@ -41,12 +40,8 @@ const History: FunctionComponent<HistoryProps> = () => {
 
   return (
     <>
-      <Title value="History | Moonlight" />
-      <FilmListViewForBookmarkAndHistory
-        films={recentlyWatchFilms}
-        isLoading={isLoading}
-        pageType="history"
-      />
+      <Title value="History | Night Owl" />
+   
 
       <Footer />
     </>
