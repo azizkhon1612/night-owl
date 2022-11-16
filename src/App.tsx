@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Search from "./pages/Search";
 import Error from "./pages/Error";
 import Home from "./pages/Home";
+import Auth from "./pages/Auth";
 import MovieInfo from "./pages/Movie/MovieInfo";
 import TVInfo from "./pages/TV/TVInfo";
 import TVWatch from "./pages/TV/TVWatch";
@@ -27,6 +28,7 @@ function App() {
       <Route path="tv/:id/watch" element={<TVWatch />} />
       <Route path="explore" element={<Explore />} />
       <Route path="search" element={<Search />} />
+      <Route path="auth" element={<Auth />} />
       <Route path="*" element={<Error />} />
     </Routes>
   );
