@@ -22,7 +22,7 @@ const Auth: FunctionComponent<AuthProps> = () => {
           className="fixed md:-top-[130px] -top-[155px] object-cover left-0 h-[135vh] w-full -z-10"
         >
           <source
-            src="https://github.com/azizkhon1612/night-owl/blob/master/public/Marvel%20Studios'%20Doctor%20Strange%20in%20the%20Multiverse%20of%20Madness%20_%20Official%20Trailer%20(online-video-cutter.com)%20(1).mp4"
+            src="https://github.com/azizkhon1612/night-owl/raw/master/public/Marvel%20Studios'%20Doctor%20Strange%20in%20the%20Multiverse%20of%20Madness%20_%20Official%20Trailer%20(online-video-cutter.com)%20(1).mp4"
             type="video/mp4"
           />
         </video>
