@@ -3,10 +3,10 @@ import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import SearchBox from "../components/Common/SearchBox";
 import Sidebar from "../components/Common/Sidebar";
 import Title from "../components/Common/Title";
 import Footer from "../components/Footer/Footer";
-import SearchBox from "../components/Common/SearchBox";
 import MainHomeFilms from "../components/Home/MainHomeFilm";
 import RecommendGenres from "../components/Home/RecommendGenres";
 import TrendingNow from "../components/Home/TrendingNow";
@@ -71,7 +71,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Title value="Night Owl | Free Movie Website" />
+      <Title value="Moonlight | Watching Website" />
 
       <div className="flex md:hidden justify-between items-center px-5 my-5">
         <Link to="/" className="flex gap-2 items-center">
@@ -80,7 +80,7 @@ const Home: FC = () => {
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Night<span className="text-primary">Owl</span>
+            Moon<span className="text-primary">light</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>
@@ -123,7 +123,9 @@ const Home: FC = () => {
               </button>
             </div>
             <div className="flex gap-6 items-center">
-             
+              {/* <div className="w-6 h-6 rounded-full border border-gray-lighten tw-flex-center cursor-pointer">
+                <IoMdNotificationsOutline size={17} />
+              </div> */}
               <p>{currentUser?.displayName || "Anonymous"}</p>
               <LazyLoadImage
                 src={
@@ -158,9 +160,9 @@ const Home: FC = () => {
         </div>
 
         <div className="shrink-0 max-w-[310px] w-full hidden lg:block px-6 top-0 sticky ">
-        <SearchBox />
-        <RecommendGenres currentTab={currentTab} />
-        <TrendingNow />
+          <SearchBox />
+          <RecommendGenres currentTab={currentTab} />
+          <TrendingNow />
         </div>
       </div>
 

@@ -52,6 +52,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import Protected from "./components/Common/Protected";
 import Auth from "./pages/Auth";
+import Bookmarked from "./pages/Bookmarked";
 import Error from "./pages/Error";
 import Explore from "./pages/Explore";
 import History from "./pages/History";
@@ -149,7 +150,7 @@ function App() {
         path="bookmarked"
         element={
           <Protected isSignedIn={isSignedIn}>
-         
+            <Bookmarked />
           </Protected>
         }
       />

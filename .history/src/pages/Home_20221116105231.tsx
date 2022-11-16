@@ -71,7 +71,7 @@ const Home: FC = () => {
 
   return (
     <>
-      <Title value="Night Owl | Free Movie Website" />
+      <Title value="Moonlight | Watching Website" />
 
       <div className="flex md:hidden justify-between items-center px-5 my-5">
         <Link to="/" className="flex gap-2 items-center">
