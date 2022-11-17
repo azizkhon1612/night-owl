@@ -5,6 +5,14 @@ import { getRecommendGenres2 } from "../../services/search";
 import { getRecommendGenres2Type } from "../../shared/types";
 
 const getRandomGenres = (genres: { id: number; name: string }[]) => {
+  // const NUMBER_OF_GENRES = 6;
+  // const randomGenres = [] as { id: number; name: string }[];
+  // [...new Array(NUMBER_OF_GENRES)].forEach((genre) => {
+  //   const randomIndex = Math.floor(Math.random() * genres.length);
+  //   randomGenres.push(genres[randomIndex]);
+  //   genres = genres.filter((item: any) => item.id !== genres[randomIndex].id);
+  // });
+
   const myChoiceGenresIndex = [5, 2, 13, 14, 6, 7, 4];
   return myChoiceGenresIndex.map((arrIndex) => genres[arrIndex]);
 };
