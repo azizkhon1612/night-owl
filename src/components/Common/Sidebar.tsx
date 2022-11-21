@@ -1,4 +1,4 @@
-
+import { signOut } from "firebase/auth";
 import { FC, useState } from "react";
 import { AiOutlineHistory, AiOutlineHome } from "react-icons/ai";
 import { BiSearch, BiUserCircle } from "react-icons/bi";
@@ -9,7 +9,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { useCurrentViewportView } from "../../hooks/useCurrentViewportView";
-
+import { auth } from "../../shared/firebase";
 import { useAppSelector } from "../../store/hooks";
 
 interface SidebarProps {
@@ -24,6 +24,27 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
   const navigate = useNavigate();
   const { isMobile } = useCurrentViewportView();
 
+  const signOutHandler = () => {
+    setIsLoading(true);
+    signOut(auth)
+      .then(() => {
+        toast.success("Sign out successfully", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      })
+      .catch((error) => alert(error.message))
+      .finally(() => setIsLoading(false));
+  };
 
   const personalPageHandler = (destinationUrl: string) => {
     if (!currentUser) {
@@ -177,7 +198,15 @@ const Sidebar: FC<SidebarProps> = ({ isSidebarActive, setIsSidebarActive }) => {
             </Link>
           )}
 
-        
+          {currentUser && (
+            <button
+              onClick={signOutHandler}
+              className="flex gap-5 items-center"
+            >
+              <HiOutlineLogout size={30} />
+              <p>Logout</p>
+            </button>
+          )}
         </div>
       </div>
 
