@@ -1,6 +1,4 @@
-import React from "react";
 import { FC, useEffect } from "react";
-
 
 interface TitleProps {
   value: string;
