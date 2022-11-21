@@ -1,17 +1,22 @@
 import {
   createUserWithEmailAndPassword,
+  FacebookAuthProvider,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FunctionComponent, useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
+import { FaFacebookF } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { RiLockPasswordLine } from "react-icons/ri";
 import * as Yup from "yup";
 import { auth, db } from "../../shared/firebase";
 import { convertErrorCodeToMessage, getRandomAvatar } from "../../shared/utils";
 import { useAppSelector } from "../../store/hooks";
 import ModalNotification from "./ModalNotification";
+import { signInWithProvider } from "./signInWithProvider";
 interface SignUpProps {
   setIsSignIn: any;
   isSignIn: boolean;
@@ -69,8 +74,26 @@ const SignUp: FunctionComponent<SignUpProps> = ({ setIsSignIn, isSignIn }) => {
             <div className="text-primary leading-none mb-4 ">
               Create Account
             </div>
-          </div>  
-       
+          </div>
+          <div className="flex gap-4 mb-8">
+            <button
+              onClick={() =>
+                signInWithProvider(new GoogleAuthProvider(), "google")
+              }
+              className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
+            >
+              <FcGoogle size={25} className="text-primary" />
+            </button>
+            <button
+              onClick={() =>
+                signInWithProvider(new FacebookAuthProvider(), "facebook")
+              }
+              className="h-12 w-12 rounded-full bg-white tw-flex-center hover:brightness-75 transition duration-300"
+            >
+              <FaFacebookF size={25} className="text-primary" />
+            </button>
+          </div>
+          <p className="text-lg">or use your email account: </p>
         </div>
 
         <Formik
