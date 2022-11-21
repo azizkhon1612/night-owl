@@ -14,12 +14,10 @@ import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyBNIsH2EAOwcSez9LRBotkEYMGduF14kHs",
   authDomain: "night-owl-43e99.firebaseapp.com",
-  databaseURL: "https://night-owl-43e99-default-rtdb.firebaseio.com",
   projectId: "night-owl-43e99",
   storageBucket: "night-owl-43e99.appspot.com",
   messagingSenderId: "844019019706",
   appId: "1:844019019706:web:441701f3240548c8deb783",
-  measurementId: "G-4SN14FN07F"
 };
 
 const app = initializeApp(firebaseConfig);
