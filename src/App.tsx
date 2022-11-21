@@ -1,50 +1,3 @@
-// import { useEffect } from "react";
-// import { Route, Routes, useLocation } from "react-router-dom";
-// import Search from "./pages/Search";
-// import Error from "./pages/Error";
-// import Home from "./pages/Home";
-// import MovieInfo from "./pages/Movie/MovieInfo";
-// import TVInfo from "./pages/TV/TVInfo";
-// import TVWatch from "./pages/TV/TVWatch";
-// import MovieWatch from "./pages/Movie/MovieWatch";
-// import Explore from "./pages/Explore";
-// import Profile from "./pages/Profile";
-
-// function App() {
-//   const location = useLocation();
-//   // const currentUser = useAppSelector((state) => state.auth.user);
-
-
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, [location.pathname, location.search]);
-
-//   return (
-//     <Routes>
-//       <Route index element={<Home />} />
-//       <Route path="movie/:id" element={<MovieInfo />} />
-//       <Route path="tv/:id" element={<TVInfo />} />
-//       <Route path="movie/:id/watch" element={<MovieWatch />} />
-//       <Route path="tv/:id/watch" element={<TVWatch />} />
-//       <Route path="explore" element={<Explore />} />
-//       <Route path="search" element={<Search />} />
-//       <Route
-//         path="profile"
-//         element={
-//           <Protected isSignedIn={isSignedIn}>
-//             <Profile />
-//           </Protected>
-//         }
-//       />
-//       <Route path="*" element={<Error />} />
-//     </Routes>
-//   );
-// }
-
-// export default App;
-
-
-
 import { onAuthStateChanged } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -52,6 +5,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import Protected from "./components/Common/Protected";
 import Auth from "./pages/Auth";
+import Bookmarked from "./pages/Bookmarked";
 import Error from "./pages/Error";
 import Explore from "./pages/Explore";
 import History from "./pages/History";
@@ -149,7 +103,7 @@ function App() {
         path="bookmarked"
         element={
           <Protected isSignedIn={isSignedIn}>
-         
+            <Bookmarked />
           </Protected>
         }
       />
