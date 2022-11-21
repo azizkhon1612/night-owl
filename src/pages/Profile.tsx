@@ -176,7 +176,7 @@ import {
         
           return (
             <>
-              <Title value="Profile | Moonlight" />
+              <Title value="Profile | NightOwl" />
         
               <ToastContainer />
         
