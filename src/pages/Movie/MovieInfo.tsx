@@ -8,7 +8,7 @@ import Error from "../Error";
 
 const MovieInfo: FC = () => {
   const { id } = useParams();
-  const { data, isError, error } = useQuery<FilmInfo, Error>(
+  const { data, isError } = useQuery<FilmInfo, Error>(
     ["movieDetail", id],
     () => getMovieFullDetail(Number(id as string))
   );
