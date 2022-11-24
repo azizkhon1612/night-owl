@@ -176,7 +176,7 @@ const Profile: FunctionComponent<ProfileProps> = () => {
 
   return (
     <>
-      <Title value="Profile | NightOwl" />
+      <Title value="Profile | Moonlight" />
 
       <ToastContainer />
 
