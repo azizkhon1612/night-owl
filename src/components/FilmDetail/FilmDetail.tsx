@@ -1,4 +1,10 @@
-//sasa
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  onSnapshot,
+  updateDoc,
+} from "firebase/firestore";
 import { FC, useEffect, useState } from "react";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import { AiFillHeart } from "react-icons/ai";
@@ -8,12 +14,12 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { useCurrentViewportView } from "../../hooks/useCurrentViewportView";
-
+import { db } from "../../shared/firebase";
 import { DetailMovie, DetailTV, FilmInfo } from "../../shared/types";
 import { resizeImage } from "../../shared/utils";
 import { useAppSelector } from "../../store/hooks";
-
-
+import RightbarFilms from "../Common/RightbarFilms";
+import SearchBox from "../Common/SearchBox";
 import Sidebar from "../Common/Sidebar";
 import SidebarMini from "../Common/SidebarMini";
 import Skeleton from "../Common/Skeleton";
@@ -22,11 +28,23 @@ import Footer from "../Footer/Footer";
 import FilmTabInfo from "./FilmTabInfo";
 const FilmDetail: FC<FilmInfo> = ({ similar, videos, detail, ...others }) => {
   const currentUser = useAppSelector((state) => state.auth.user);
-
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const { isMobile } = useCurrentViewportView();
   const [isSidebarActive, setIsSidebarActive] = useState(false);
+  useEffect(() => {
+    if (!currentUser) {
+      return;
+    }
 
-   
+    const unsubDoc = onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
+      setIsBookmarked(
+        doc.data()?.bookmarks.some((item: any) => item.id === detail?.id)
+      );
+    });
+
+    return () => unsubDoc();
+  }, [currentUser, detail?.id]);
+
   const bookmarkedHandler = async () => {
     if (!detail) return;
 
@@ -44,6 +62,42 @@ const FilmDetail: FC<FilmInfo> = ({ similar, videos, detail, ...others }) => {
       return;
     }
 
+    await updateDoc(doc(db, "users", currentUser.uid), {
+      bookmarks: !isBookmarked
+        ? arrayUnion({
+            poster_path: detail?.poster_path,
+            id: detail?.id,
+            vote_average: detail?.vote_average,
+            media_type: detail?.media_type,
+            ...(detail?.media_type === "movie" && { title: detail?.title }),
+            ...(detail?.media_type === "tv" && { name: detail?.name }),
+          })
+        : arrayRemove({
+            poster_path: detail?.poster_path,
+            id: detail?.id,
+            vote_average: detail?.vote_average,
+            media_type: detail?.media_type,
+            ...(detail?.media_type === "movie" && { title: detail?.title }),
+            ...(detail?.media_type === "tv" && { name: detail?.name }),
+          }),
+    });
+
+    toast.success(
+      `${
+        !isBookmarked
+          ? "This film is now bookmarked"
+          : "This film is removed from your bookmarks"
+      }`,
+      {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+    );
   };
 
   return (
@@ -63,7 +117,7 @@ const FilmDetail: FC<FilmInfo> = ({ similar, videos, detail, ...others }) => {
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Moon<span className="text-primary">light</span>
+            Night<span className="text-primary">Owl</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>
@@ -147,6 +201,19 @@ const FilmDetail: FC<FilmInfo> = ({ similar, videos, detail, ...others }) => {
                   )}
                 </div>
                 <div className="flex gap-3 absolute top-[5%] right-[3%]">
+                  <button
+                    onClick={bookmarkedHandler}
+                    className={`tw-flex-center h-12 w-12 rounded-full border-[3px] border-white shadow-lg hover:border-primary transition duration-300 group ${
+                      isBookmarked && "!border-primary"
+                    }`}
+                  >
+                    <AiFillHeart
+                      size={20}
+                      className={`text-white group-hover:text-primary transition duration-300 ${
+                        isBookmarked && "!text-primary"
+                      }`}
+                    />
+                  </button>
                   {!isMobile && (
                     <>
                       <button className="tw-flex-center h-12 w-12 rounded-full border-[3px] border-white shadow-lg hover:border-primary transition duration-300 group">
@@ -350,7 +417,17 @@ const FilmDetail: FC<FilmInfo> = ({ similar, videos, detail, ...others }) => {
           </div>
         </div>
 
-
+        <div className="shrink-0 md:max-w-[310px] w-full relative px-6">
+          {!isMobile && <SearchBox />}
+          {/* <RecommendGenres /> */}
+          <RightbarFilms
+            name="Similar"
+            films={similar?.filter((item) => item.id !== detail?.id)}
+            limitNumber={4}
+            isLoading={!similar}
+            className="md:mt-24 mt-12"
+          />
+        </div>
       </div>
       <Footer />
     </>

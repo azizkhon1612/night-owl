@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
-import SortBy from "./SortBy";
 import FilterBy from "./FilterBy";
-
+import SortBy from "./SortBy";
 interface ExploreFilterProps {
   currentTab: string;
 }

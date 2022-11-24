@@ -135,7 +135,7 @@ const FilmTabInfo: FC<FilmTabInfoProps> = ({ detail, credits, reviews }) => {
               ))}
           </ul>
         )}
-         {currentTab === "reviews" && reviews && <ReviewTab reviews={reviews} />}
+        {currentTab === "reviews" && reviews && <ReviewTab reviews={reviews} />}
         {currentTab === "seasons" && (
           <>
             <div className="flex justify-between mb-8">

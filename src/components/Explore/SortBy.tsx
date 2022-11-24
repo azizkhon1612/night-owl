@@ -14,9 +14,9 @@ const SortBy: FunctionComponent<SortByProps> = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const options = [
-    { value: "popularity.desc", label: "Popular" },
-    { value: "vote_average.desc", label: "Highest Rated" },
-    { value: "release_date.desc", label: "Recent" },
+    { value: "popularity.desc", label: "Most popular" },
+    { value: "vote_average.desc", label: "Most rating" },
+    { value: "release_date.desc", label: "Most recent" },
   ];
 
   const customStyles = {

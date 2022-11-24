@@ -1,3 +1,4 @@
+import { arrayUnion, doc, getDoc, updateDoc } from "firebase/firestore";
 import { FunctionComponent, useEffect, useState } from "react";
 import { AiFillStar, AiTwotoneCalendar } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -5,6 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { useCurrentViewportView } from "../../hooks/useCurrentViewportView";
+import { db } from "../../shared/firebase";
 import {
   DetailMovie,
   DetailTV,
@@ -13,9 +15,10 @@ import {
   Item,
 } from "../../shared/types";
 import { embedMovie, embedTV } from "../../shared/utils";
-
+import { useAppSelector } from "../../store/hooks";
 import ReadMore from "../Common/ReadMore";
 import RightbarFilms from "../Common/RightbarFilms";
+import SearchBox from "../Common/SearchBox";
 import Sidebar from "../Common/Sidebar";
 import SidebarMini from "../Common/SidebarMini";
 import Skeleton from "../Common/Skeleton";
@@ -39,12 +42,53 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
   episodeId,
   currentEpisode,
 }) => {
- 
+  const currentUser = useAppSelector((state) => state.auth.user);
   const { isMobile } = useCurrentViewportView();
   const [isSidebarActive, setIsSidebarActive] = useState(false);
 
-  
-    
+  useEffect(() => {
+    if (!currentUser) return;
+    if (!detail) return; // prevent this code from storing undefined value to Firestore (which cause error)
+
+    getDoc(doc(db, "users", currentUser.uid)).then((docSnap) => {
+      const isAlreadyStored = docSnap
+        .data()
+        ?.recentlyWatch.some((film: Item) => film.id === detail?.id);
+
+      if (!isAlreadyStored) {
+        updateDoc(doc(db, "users", currentUser.uid), {
+          recentlyWatch: arrayUnion({
+            poster_path: detail?.poster_path,
+            id: detail?.id,
+            vote_average: detail?.vote_average,
+            media_type: media_type,
+            ...(media_type === "movie" && {
+              title: (detail as DetailMovie)?.title,
+            }),
+            ...(media_type === "tv" && { name: (detail as DetailTV)?.name }),
+          }),
+        });
+      } else {
+        const updatedRecentlyWatch = docSnap
+          .data()
+          ?.recentlyWatch.filter((film: Item) => film.id !== detail?.id)
+          .concat({
+            poster_path: detail?.poster_path,
+            id: detail?.id,
+            vote_average: detail?.vote_average,
+            media_type: media_type,
+            ...(media_type === "movie" && {
+              title: (detail as DetailMovie)?.title,
+            }),
+            ...(media_type === "tv" && { name: (detail as DetailTV)?.name }),
+          });
+
+        updateDoc(doc(db, "users", currentUser.uid), {
+          recentlyWatch: updatedRecentlyWatch,
+        });
+      }
+    });
+  }, [currentUser, detail, media_type]);
 
   return (
     <>
@@ -208,7 +252,7 @@ const FilmWatch: FunctionComponent<FilmWatchProps & getWatchReturnedType> = ({
           </div>
         </div>
         <div className="shrink-0 md:max-w-[400px] w-full relative px-6">
-          {!isMobile}
+          {!isMobile && <SearchBox />}
           {media_type === "movie" && (
             <RightbarFilms
               name="Recommendations"
