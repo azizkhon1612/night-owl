@@ -3,8 +3,8 @@ import { FunctionComponent, useState } from "react";
 import { auth } from "../../shared/firebase";
 import { convertErrorCodeToMessage } from "../../shared/utils";
 import { useAppSelector } from "../../store/hooks";
-import { ToastContainer, toast } from "react-toastify";
 
+import { ToastContainer, toast } from "react-toastify";
 interface EmailVerificationProps {
   setIsUpdating: any;
 }
