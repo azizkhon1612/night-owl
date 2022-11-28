@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             webViewClient= WebViewClient()
             webChromeClient= WebChromeClient()
             loadUrl("https://night-owl-ten.vercel.app/")
-            onBackPressed()
+            
         }
 
         webView.settings.apply {
@@ -27,12 +27,6 @@ class MainActivity : AppCompatActivity() {
             setSupportZoom(true)
         }
 
-    }
-    override fun onBackPressed() {
-        if (webView.canGoBack())
-            webView.goBack()
-        else
-            super.onBackPressed()
     }
 
 }
