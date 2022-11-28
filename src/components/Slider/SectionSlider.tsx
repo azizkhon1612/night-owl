@@ -36,6 +36,9 @@ const SectionSlider: FC<SectionSliderProps> = ({ films }) => {
               ))}
           </>
         )}
+        /*
+        The s has been removed.
+           */
 
         {films !== undefined && (
           <>
