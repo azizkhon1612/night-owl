@@ -35,7 +35,7 @@ const SectionSlider: FC<SectionSliderProps> = ({ films }) => {
                 </SwiperSlide>
               ))}
           </>
-        )}S
+        )}
 
         {films !== undefined && (
           <>
