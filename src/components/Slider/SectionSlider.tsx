@@ -36,10 +36,7 @@ const SectionSlider: FC<SectionSliderProps> = ({ films }) => {
               ))}
           </>
         )}
-        /*
-        The s has been removed.
-           */
-
+       
         {films !== undefined && (
           <>
             <div className="absolute top-[2%] left-0 w-full h-[83%] z-10 pointer-events-none tw-black-backdrop-2" />
