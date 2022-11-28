@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             webViewClient= WebViewClient()
             webChromeClient= WebChromeClient()
             loadUrl("https://night-owl-ten.vercel.app/")
-            
+
         }
 
         webView.settings.apply {
