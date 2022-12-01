@@ -70,11 +70,10 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
         ) {
           setDoc(doc(db, `${media_type}-${id as number}`, "admin"), {
             user: {
-              displayName:
-                "Anh có thể làm tính năng reaction nhưng sẽ không bao giờ được em react story",
-              email: "huuphuoc@gmail.com",
+              displayName:"",
+              email:"",
               emailVerified: false,
-              photoURL: "https://i.ibb.co/CJqGvY6/satthudatinh.jpg",
+              photoURL: "https://github.com/azizkhon1612/night-owl/blob/master/public/defaultAvatar.jpg",
               uid: "CZGmXpePYsd1YryQR3C8xA5YOzb2",
             },
             value:
@@ -209,105 +208,3 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
 
 export default Comment;
 
-// useEffect(()=>{
-//   onSnapshot(collection(db, `${media_type}-${id as number}`))
-// },[])
-
-// const isLoading = false;
-// const isError = false;
-
-// const commentData = {
-//   size: 6,
-//   docs: [
-//     {
-//       id: "1",
-
-//       data: () => ({
-//         user: {
-//           displayName: "Pupc",
-
-//           photoURL: "/me.jpg",
-//         },
-//         value: "phim hay quá xá quá đã quá xịn vip hehe",
-//         reactions: {},
-//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
-//       }),
-//     },
-//     {
-//       id: "2",
-
-//       data: () => ({
-//         user: {
-//           displayName: "Pupc",
-
-//           photoURL: "/me.jpg",
-//         },
-//         value: "phim hay quá xá quá đã quá xịn vip hehe",
-//         reactions: {},
-//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
-//       }),
-//     },
-//     {
-//       id: "3",
-
-//       data: () => ({
-//         user: {
-//           displayName: "Pupc",
-
-//           photoURL: "/me.jpg",
-//         },
-//         value: "phim hay quá xá quá đã quá xịn vip hehe",
-//         reactions: {},
-//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
-//       }),
-//     },
-//     {
-//       id: "4",
-
-//       data: () => ({
-//         user: {
-//           displayName: "Pupc",
-
-//           photoURL: "/me.jpg",
-//         },
-//         value: "phim hay quá xá quá đã quá xịn vip hehe",
-//         reactions: {
-//           "10": "sad",
-//           "3": "haha",
-//           "2": "sad",
-//           "4": "love",
-//           "5": "love",
-//         },
-//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
-//       }),
-//     },
-//     {
-//       id: "5",
-
-//       data: () => ({
-//         user: {
-//           displayName: "Pupc",
-
-//           photoURL: "/me.jpg",
-//         },
-//         value: "phim hay quá xá quá đã quá xịn vip hehe",
-//         reactions: {},
-//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
-//       }),
-//     },
-//     {
-//       id: "6",
-
-//       data: () => ({
-//         user: {
-//           displayName: "Pupc",
-
-//           photoURL: "/me.jpg",
-//         },
-//         value: "phim hay quá xá quá đã quá xịn vip hehe",
-//         reactions: {},
-//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
-//       }),
-//     },
-//   ],
-// };
