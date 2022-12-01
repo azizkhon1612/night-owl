@@ -79,9 +79,6 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
               nj99GDXzPwNhcfUpk5PkyNFiwPt1: "sad",
               ufw994VFRnQDCL0f6ISXpeIBTFX2: "haha",
             },
-            createdAt: Timestamp.fromDate(
-              new Date("Sat Aug 03 2022 10:10:32 GMT+0700 (Indochina Time)")
-            ),
             isEdited: true,
           });
         }
