@@ -50,7 +50,7 @@ const ProfileImage: FunctionComponent<ProfileImageProps> = () => {
       <div className="flex flex-col items-center mt-4 ">
         <div className="w-[250px] h-[250px] relative">
           <LazyLoadImage
-            src={currentUser?.photoURL || "defaultAvatar.jpg"}
+            src={currentUser?.photoURL || "/defaultAvatar.jpg"}
             alt="profile picture"
             className="w-[250px] h-[250px] rounded-full object-cover"
           />

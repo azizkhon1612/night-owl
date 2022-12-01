@@ -70,14 +70,15 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
         ) {
           setDoc(doc(db, `${media_type}-${id as number}`, "admin"), {
             user: {
-              displayName:"",
-              email:"",
+              displayName:
+                "Anh có thể làm tính năng reaction nhưng sẽ không bao giờ được em react story",
+              email: "huuphuoc@gmail.com",
               emailVerified: false,
-              photoURL: "https://github.com/azizkhon1612/night-owl/blob/master/public/defaultAvatar.jpg",
+              photoURL: "https://i.ibb.co/CJqGvY6/satthudatinh.jpg",
               uid: "CZGmXpePYsd1YryQR3C8xA5YOzb2",
             },
             value:
-              "",
+              "Ngoài bình luận, trang web còn có chức năng thả cảm xúc, xem thông tin những người thả cảm xúc, (cảm xúc được nhiều người thả sẽ được ưu tiên hiện đầu), trả lời bình luận, chỉnh sửa, xóa, ẩn bình luận, sắp xếp bình luận, tải thêm bình luận.",
             reactions: {
               "3RkuRS4zSqadAkKDqSfTjCzwzF92": "haha",
               GMaGmpy8ZaRBEhtaoZJdd9pNNXz1: "love",
@@ -97,7 +98,7 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
             //   cn9xgPSUVlNzGasKyxoTTvFnVWk1: "wow",
             // },
             createdAt: Timestamp.fromDate(
-              new Date("Thu Dec 01 2022 12:10:32 GMT+0900 (Seoul Time)")
+              new Date("Sat Aug 03 2022 10:10:32 GMT+0700 (Indochina Time)")
             ),
             isEdited: true,
           });
@@ -208,3 +209,105 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
 
 export default Comment;
 
+// useEffect(()=>{
+//   onSnapshot(collection(db, `${media_type}-${id as number}`))
+// },[])
+
+// const isLoading = false;
+// const isError = false;
+
+// const commentData = {
+//   size: 6,
+//   docs: [
+//     {
+//       id: "1",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "2",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "3",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "4",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {
+//           "10": "sad",
+//           "3": "haha",
+//           "2": "sad",
+//           "4": "love",
+//           "5": "love",
+//         },
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "5",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "6",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//   ],
+// };

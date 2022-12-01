@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Sidebar from "../components/Common/Sidebar";
 import Title from "../components/Common/Title";
 import Footer from "../components/Footer/Footer";
-import DeleteAccount from "../components/Profile/DeleteAccount";
+import DeleteAccount from "../components/Profile/DeleteAcount";
 import Email from "../components/Profile/Email";
 import EmailVerification from "../components/Profile/EmailVerification";
 import Name from "../components/Profile/Name";
@@ -34,9 +34,7 @@ const Profile: FunctionComponent<ProfileProps> = () => {
   const newPasswordValueRef = useRef<HTMLInputElement>(null!);
 
   const [isUpdating, setIsUpdating] = useState(false);
-  const [isShowPromptReAuthFor, setIsShowPromptReAuthFor] = useState<
-    string | undefined
-  >();
+  const [isShowPromptReAuthFor, setIsShowPromptReAuthFor] = useState<string | undefined>();
   const firebaseUser = auth.currentUser;
 
   const reAuthentication = async (type: string) => {
@@ -187,7 +185,7 @@ const Profile: FunctionComponent<ProfileProps> = () => {
             className="h-10 w-10 rounded-full object-cover"
           />
           <p className="text-xl text-white font-medium tracking-wider uppercase">
-            Moon<span className="text-primary">light</span>
+            Night<span className="text-primary">Owl</span>
           </p>
         </Link>
         <button onClick={() => setIsSidebarActive((prev) => !prev)}>

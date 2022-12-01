@@ -37,8 +37,8 @@ const Reply: FunctionComponent<ReplyProps> = ({ commendId }) => {
       ) {
         addDoc(collection(db, "replyTo-admin"), {
           user: {
-            displayName: "movie lover",
-            email: "abcd@gmail.com",
+            displayName: "Vì anh  đâu có biết",
+            email: "huuphuoc5@gmail.com",
             emailVerified: false,
             photoURL: "https://i.ibb.co/zrXfKsJ/catface-7.jpg",
             uid: "Z3eRARZ9jlftBLA6u0g8MWABkwo2",
