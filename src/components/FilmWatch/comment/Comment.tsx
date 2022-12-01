@@ -78,7 +78,7 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
               uid: "CZGmXpePYsd1YryQR3C8xA5YOzb2",
             },
             value:
-              "Ngoài bình luận, trang web còn có chức năng thả cảm xúc, xem thông tin những người thả cảm xúc, (cảm xúc được nhiều người thả sẽ được ưu tiên hiện đầu), trả lời bình luận, chỉnh sửa, xóa, ẩn bình luận, sắp xếp bình luận, tải thêm bình luận.",
+              "",
             reactions: {
               "3RkuRS4zSqadAkKDqSfTjCzwzF92": "haha",
               GMaGmpy8ZaRBEhtaoZJdd9pNNXz1: "love",
