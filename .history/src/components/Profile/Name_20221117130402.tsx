@@ -34,7 +34,6 @@ const Name: FunctionComponent<NameProps> = ({ setIsUpdating }) => {
       });
       return;
     }
-
     setIsUpdating(true);
     // @ts-ignore
     updateDoc(doc(db, "users", currentUser.uid), {
@@ -46,7 +45,6 @@ const Name: FunctionComponent<NameProps> = ({ setIsUpdating }) => {
       })
       .catch((error) => {
         console.log(error);
-        // alert(convertErrorCodeToMessage(error.code));
         toast.error(convertErrorCodeToMessage(error.code), {
           position: "top-right",
           autoClose: 2000,
