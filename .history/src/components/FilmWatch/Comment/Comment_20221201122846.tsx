@@ -80,7 +80,7 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
               ufw994VFRnQDCL0f6ISXpeIBTFX2: "haha",
             },
             createdAt: Timestamp.fromDate(
-              new Date("Sat Nov 26 2022 10:10:32 GMT+0700 (Indochina Time)")
+              new Date("Sat Aug 03 2022 10:10:32 GMT+0700 (Indochina Time)")
             ),
             isEdited: true,
           });
