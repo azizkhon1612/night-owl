@@ -1,13 +1,9 @@
 import {
   addDoc,
   collection,
-  doc,
-  getDocs,
   orderBy,
   query,
   serverTimestamp,
-  setDoc,
-  Timestamp,
 } from "firebase/firestore";
 import { FormEvent, FunctionComponent, useEffect, useState } from "react";
 import { MdSend } from "react-icons/md";
