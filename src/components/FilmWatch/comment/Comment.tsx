@@ -97,7 +97,7 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
             //   cn9xgPSUVlNzGasKyxoTTvFnVWk1: "wow",
             // },
             createdAt: Timestamp.fromDate(
-              new Date("Sat Aug 03 2022 10:10:32 GMT+0700 (Indochina Time)")
+              new Date("Thu Dec 01 2022 12:10:32 GMT+0900 (Indochina Time)")
             ),
             isEdited: true,
           });
