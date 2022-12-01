@@ -69,8 +69,19 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
           )
         ) {
           setDoc(doc(db, `${media_type}-${id as number}`, "admin"), {
+<<<<<<< HEAD
+=======
+            user: {
+              displayName:
+                "Anh có thể làm tính năng reaction nhưng sẽ không bao giờ được em react story",
+              email: "huuphuoc@gmail.com",
+              emailVerified: false,
+              photoURL: "https://i.ibb.co/CJqGvY6/satthudatinh.jpg",
+              uid: "CZGmXpePYsd1YryQR3C8xA5YOzb2",
+            },
+>>>>>>> 48d1fdb7c8bbf644d03511221e8c490a4c701172
             value:
-              "Adding your reaction is available.",
+              "Ngoài bình luận, trang web còn có chức năng thả cảm xúc, xem thông tin những người thả cảm xúc, (cảm xúc được nhiều người thả sẽ được ưu tiên hiện đầu), trả lời bình luận, chỉnh sửa, xóa, ẩn bình luận, sắp xếp bình luận, tải thêm bình luận.",
             reactions: {
               "3RkuRS4zSqadAkKDqSfTjCzwzF92": "haha",
               GMaGmpy8ZaRBEhtaoZJdd9pNNXz1: "love",
@@ -79,6 +90,15 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
               nj99GDXzPwNhcfUpk5PkyNFiwPt1: "sad",
               ufw994VFRnQDCL0f6ISXpeIBTFX2: "haha",
             },
+            // reactions: {
+            //   "6Lg5V78TSEWckhcLAh2DVwq5uBQ2": "haha",
+            //   "7heoxozOe1W14I5sYUgAPr50Zj52": "love",
+            //   DyXuUkhd9aTbJIeUn8Sgagoiv042: "love",
+            //   PxxS9XDYd3RgU2Dgjq63MwdCvvn1: "angry",
+            //   SUzdiwRMrNcRVJaKOJP3YH5hg7n1: "haha",
+            //   aRoVaCH1MeakCx6Hnx6nRKmVwrt2: "haha",
+            //   cn9xgPSUVlNzGasKyxoTTvFnVWk1: "wow",
+            // },
             createdAt: Timestamp.fromDate(
               new Date("Sat Aug 03 2022 10:10:32 GMT+0700 (Indochina Time)")
             ),
@@ -190,3 +210,106 @@ const Comment: FunctionComponent<CommentProps> = ({ id, media_type }) => {
 };
 
 export default Comment;
+
+// useEffect(()=>{
+//   onSnapshot(collection(db, `${media_type}-${id as number}`))
+// },[])
+
+// const isLoading = false;
+// const isError = false;
+
+// const commentData = {
+//   size: 6,
+//   docs: [
+//     {
+//       id: "1",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "2",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "3",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "4",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {
+//           "10": "sad",
+//           "3": "haha",
+//           "2": "sad",
+//           "4": "love",
+//           "5": "love",
+//         },
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "5",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//     {
+//       id: "6",
+
+//       data: () => ({
+//         user: {
+//           displayName: "Pupc",
+
+//           photoURL: "/me.jpg",
+//         },
+//         value: "phim hay quá xá quá đã quá xịn vip hehe",
+//         reactions: {},
+//         createdAt: { seconds: 5, nanoseconds: 5000000000 },
+//       }),
+//     },
+//   ],
+// };
