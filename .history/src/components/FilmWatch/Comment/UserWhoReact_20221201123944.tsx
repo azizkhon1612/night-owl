@@ -50,40 +50,40 @@ const UserWhoReact: FunctionComponent<UserWhoReactProps> = ({
   // const infoReactionUserFake = [
   //   {
   //     user: {
-  //       firstName: "hieu",
-  //       lastName: "huy",
+  //       firstName: "phuoc",
+  //       lastName: "huu",
   //       photoUrl: "/me.jpg",
   //     },
   //     reaction: "sad",
   //   },
   //   {
   //     user: {
-  //       firstName: "nguyen",
-  //       lastName: "huy",
+  //       firstName: "phuoc",
+  //       lastName: "huu",
   //       photoUrl: "/me.jpg",
   //     },
   //     reaction: "sad",
   //   },
   //   {
   //     user: {
-  //       firstName: "huy",
-  //       lastName: "hieu",
+  //       firstName: "phuoc",
+  //       lastName: "huu",
   //       photoUrl: "/me.jpg",
   //     },
   //     reaction: "haha",
   //   },
   //   {
   //     user: {
-  //       firstName: "huy",
-  //       lastName: "hieu",
+  //       firstName: "phuoc",
+  //       lastName: "huu",
   //       photoUrl: "/me.jpg",
   //     },
   //     reaction: "love",
   //   },
   //   {
   //     user: {
-  //       firstName: "hieu",
-  //       lastName: "nguyen",
+  //       firstName: "phuoc",
+  //       lastName: "huu",
   //       photoUrl: "/me.jpg",
   //     },
   //     reaction: "love",
