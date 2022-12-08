@@ -7,6 +7,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import com.example.test.FullScreen
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val webView=findViewById<WebView>(R.id.webView)
         webView.apply {
             webViewClient = WebViewClient()
-            webChromeClient = WebChromeClient()
+            webChromeClient = FullScreen(this@MainActivity)
             settings.javaScriptEnabled = true
             settings.javaScriptCanOpenWindowsAutomatically = false
             settings.setSupportMultipleWindows(false)
