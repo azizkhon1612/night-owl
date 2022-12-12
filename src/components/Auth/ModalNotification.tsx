@@ -51,6 +51,7 @@ const ModalNotification: FunctionComponent<ModalNotificationProps> = ({
         }}
         className="bg-cover bg-no-repeat bg-center min-h-[450px] max-w-[350px] w-full fixed z-30 tw-absolute-center rounded-xl"
       >
+        // Change
         <div className="mt-[230px] font-bold text-white text-[40px] text-center">
           {type === "success" ? "Woo hoo!" : "Oh no."}
         </div>
