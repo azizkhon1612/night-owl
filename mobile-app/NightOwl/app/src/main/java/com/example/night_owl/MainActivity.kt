@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
             webViewClient = WebViewClient()
             webChromeClient = FullScreen(this@MainActivity)
             settings.javaScriptEnabled = true
-            settings.javaScriptCanOpenWindowsAutomatically = false
+            settings.javaScriptCanOpenWindowsAutomatically =true
             settings.setSupportMultipleWindows(false)
-            settings.loadsImagesAutomatically = true
+             settings.loadsImagesAutomatically = true
             settings.useWideViewPort = true
             settings.loadWithOverviewMode = true
             settings.setSupportZoom(true)
@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
             settings.domStorageEnabled = true
             settings.allowContentAccess
             settings.databaseEnabled = true
+            settings.setSavePassword(false);
+            settings.setSaveFormData(false)
+
         }
 
         webView.loadUrl("https://night-owl-ten.vercel.app/")
