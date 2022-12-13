@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        webView.loadUrl("https://night-owl-ten.vercel.app/")
+        webView.loadUrl("https://night-owl-prod.vercel.app/")
 
         onBackPressedDispatcher.addCallback(this,object:OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
