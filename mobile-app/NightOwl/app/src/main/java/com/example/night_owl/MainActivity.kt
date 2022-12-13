@@ -21,19 +21,16 @@ class MainActivity : AppCompatActivity() {
             settings.javaScriptEnabled = true
             settings.javaScriptCanOpenWindowsAutomatically =true
             settings.setSupportMultipleWindows(false)
-             settings.loadsImagesAutomatically = true
+            settings.loadsImagesAutomatically = true
             settings.useWideViewPort = true
             settings.loadWithOverviewMode = true
             settings.setSupportZoom(true)
             settings.builtInZoomControls = false
             settings.displayZoomControls = false
             settings.cacheMode = WebSettings.LOAD_NO_CACHE
-            settings.setAppCacheEnabled(false)
             settings.domStorageEnabled = true
             settings.allowContentAccess
             settings.databaseEnabled = true
-            settings.setSavePassword(false);
-            settings.setSaveFormData(false)
 
         }
 
